@@ -1,7 +1,7 @@
 pipeline {
   agent any
   tools {
-    nodejs 'node-11.0.0'
+    nodejs '24.1.0
   }
 
   options {
@@ -11,12 +11,12 @@ pipeline {
   stages {
     stage('Install dependencies') {
       steps {
-        sh 'cd jenkins-tests && npm i'
+        sh ' npm i'
       }
     }
     stage('Run tests') {
       steps {
-        sh 'cd jenkins-tests && npm t'
+        sh 'npm t'
       }
     }
   }
