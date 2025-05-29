@@ -13,12 +13,12 @@ pipeline {
       steps {
         
 		powershell 'Set-ExecutionPolicy -Scope Process -ExecutionPolicy Bypass -Force; npm install' 
-		powershell 'Set-ExecutionPolicy -Scope Process -ExecutionPolicy Bypass -Force; npm test'
       }
     }
     stage('Run tests') {
       steps {
-        sh 'npm t'
+        powershell 'Set-ExecutionPolicy -Scope Process -ExecutionPolicy Bypass -Force; npm test'
+
       }
     }
   }
